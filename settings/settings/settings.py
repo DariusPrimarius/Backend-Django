@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'core',
 ]
 
+AUTH_USER_MODEL='core.User'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -90,6 +92,9 @@ DATABASES = {
         'PASSWORD': env('DATABASE_PASSWORD'),
         'HOST': env('DATABASE_HOST'),
         'PORT': env('DATABASE_PORT'),
+        'OPTIONS': {
+            'sql_mode': env('SQL_MODE'),
+        }
     }
 }
 
